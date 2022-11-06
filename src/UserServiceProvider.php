@@ -13,10 +13,10 @@ class UserServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'red-jasmine');
+         $this->loadTranslationsFrom(__DIR__.'/../lang', 'admin');
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'red-jasmine');
          $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+         $this->loadRoutesFrom(__DIR__.'/Routes/admin.php');
 
         // Publishing is only necessary when using the CLI.
         if ($this->app->runningInConsole()) {
@@ -58,7 +58,7 @@ class UserServiceProvider extends ServiceProvider
     {
         // Publishing the configuration file.
         $this->publishes([
-            __DIR__.'/../config/red-jasmine/user.php' => config_path('user.php'),
+            __DIR__.'/../config/red-jasmine/user.php' => $this->app->configPath('red-jasmine/user.php'),
         ], 'red-jasmine.user.config');
 
         // Publishing the views.
