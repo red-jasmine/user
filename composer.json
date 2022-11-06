@@ -1,0 +1,41 @@
+{
+    "name": "red-jasmine/user",
+    "description": ":package_description",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "liushoukun",
+            "email": "liushoukun66@gmail.com",
+            "homepage": "https://github.com/liushoukun"
+        }
+    ],
+    "homepage": "https://github.com/red-jasmine/user",
+    "keywords": ["Laravel", "User"],
+    "require": {
+        "illuminate/support": "~9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~9.0",
+        "orchestra/testbench": "~7"
+    },
+    "autoload": {
+        "psr-4": {
+            "RedJasmine\\User\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RedJasmine\\User\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RedJasmine\\User\\UserServiceProvider"
+            ],
+            "aliases": {
+                "User": "RedJasmine\\User\\Facades\\User"
+            }
+        }
+    }
+}
