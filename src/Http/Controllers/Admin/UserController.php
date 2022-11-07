@@ -18,7 +18,7 @@ class UserController extends AdminController
     protected function grid()
     {
 
-        dd(admin_trans_field('owner_type'));
+
         return Grid::make(new User(), function (Grid $grid) {
             $grid->column('id')->sortable();
             $grid->column('owner_type');
